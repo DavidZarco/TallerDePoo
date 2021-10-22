@@ -29,7 +29,7 @@ public class MesaElectoral {
 
     
     
-    public void verificarDni(Lista<Elector> padronElectoral, Elector persona1){ 
+    public void verificarDni(List<Elector> padronElectoral, Elector persona1){ 
         
     }
     

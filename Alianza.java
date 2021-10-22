@@ -1,7 +1,5 @@
 import java.util.List;
 import java.util.Objects;
-import GITHUB.GrupoPolitico;
-import GITHUB.Partido;
 
 public class Alianza extends GrupoPolitico{
     

@@ -1,17 +1,23 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Mainn {
 
     public static void main(String[] args) throws Exception {
+
+                // MesaElectoral prueba1 = new MesaElectoral();
+                // Elector elector1 = new Elector();
+                // List<Elector> listaElector = new ArrayList<>();
+                
+
                 File archivo = null;
                 FileReader fr = null;
                 BufferedReader br = null ;
-                // var prueba1 = new MesaElectoral();
                 String per = "Samara";
-                String nombrevotante = "Nombre:.*";
-                // prueba1.verificarDni("C:\\votos.txt");
+                String nombrevotante = "Nombre:";
                try {
                     archivo = new File ("C:\\votos.txt");
                     
@@ -62,11 +68,15 @@ public class Mainn {
                     }
                 }
         
-                // PRUEBAS MESAELECTORAL
-                Elector elector = new Elector();
-                MesaElectoral mesaElectoral = new MesaElectoral() {
-                    
-                }
+                // PRUEBAS MESAELECTORAL 
+                
+  
+                Elector elector = new Elector("Pedro","Garcia",4093939,"asdas","asdasd",new Domicilio("asdasd","concordia","entre rios","asdasd"));
+                elector.setContadorElectores(+1);
+                List<Elector> listaElectores = new ArrayList<Elector>();
+                listaElectores.add(elector);
+                MesaElectoral mesaElectoral = new MesaElectoral(elector, elector, 12 ,listaElectores ) ;
+                System.out.println(mesaElectoral.getPadronElectoral());
         }
 
 }

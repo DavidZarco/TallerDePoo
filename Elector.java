@@ -4,22 +4,23 @@ public class Elector {
     private int dni;
     private String fecNac;
     private String lugVotacion;
-    private int contadorElectores;
+    private static int contadorElectores;
     private Domicilio domicilio;
     private MesaElectoral mesaVotacion;
 
     public Elector() {
+        this.contadorElectores = contadorElectores+1;
     }
+    
 
-    public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, int contadorElectores, Domicilio domicilio, MesaElectoral mesaVotacion) {
+    public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fecNac = fecNac;
         this.lugVotacion = lugVotacion;
-        this.contadorElectores = contadorElectores;
         this.domicilio = domicilio;
-        this.mesaVotacion = mesaVotacion;
+
     }
 
     public MesaElectoral getMesaVotacion() {

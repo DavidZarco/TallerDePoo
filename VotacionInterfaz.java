@@ -1,16 +1,11 @@
 public class VotacionInterfaz extends javax.swing.JFrame {
-
     private int dniIngresado;
-    
-    
-    
     /**
      * Creates new form VotacionInterfaz
      */
     public VotacionInterfaz() {
         initComponents();
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -24,10 +19,11 @@ public class VotacionInterfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-
+        
+        setTitle("PASO");
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
-
+        
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("");
         jTextField1.setToolTipText("");
@@ -92,10 +88,7 @@ public class VotacionInterfaz extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        
-        dniIngresado = Integer.parseInt(jTextField1.getText()); // Guardar el dni ingresado en una variable
-        
-        
+        dniIngresado = Integer.parseInt(jTextField1.getText()); // Guardar el dni ingresado en una variablez|  
     }                                        
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {                                     

@@ -43,6 +43,7 @@ public class Mainn {
                             // System.out.println("Lugar de Votacion:" + matcher.group(6));
                             elector1.setLugVotacion(matcher.group(6));
                         }
+                        // creo que en vez de hacer elector1.setnombre es hacer nombre=matcher.group1 y cuando termina el if(matcher) guardar array.nombre(i)=nombre
                             listaElector.add(elector1);
                     }
 

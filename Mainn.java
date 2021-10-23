@@ -37,7 +37,7 @@ public class Mainn {
                             // System.out.println("DOMICICLIO:" + matcher.group(3));
                             elector1.setDomicilio(new Domicilio(matcher.group(3), null, null, null));
                             // System.out.println("DNI:" + matcher.group(4));
-                            elector1.setDni(matcher.group(4));
+                            elector1.setDni(Integer.parseInt(matcher.group(4)));
                             // System.out.println("FECHA NACIMIENTO:" + matcher.group(5));
                             elector1.setFecNac(matcher.group(5));
                             // System.out.println("Lugar de Votacion:" + matcher.group(6));

@@ -91,7 +91,7 @@ public class Elector {
 
     @Override
     public String toString() {
-        return "Elector{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", fecNac=" + fecNac + ", lugVotacion=" + lugVotacion + ", contadorElectores=" + contadorElectores + ", domicilio=" + domicilio + ", mesaVotacion=" + mesaVotacion + '}';
+        return "Elector:" + "Nombre:" + nombre + ", Apellido:" + apellido + ", Dni:" + dni + ", Fecha de Nacimiento:" + fecNac + ", lugar de Votacion:" + lugVotacion + ", Contador de Electores:" + contadorElectores + ", Domicilio:" + domicilio + ", Mesa de Votacion:" + mesaVotacion + '}';
     }
 
     

@@ -8,15 +8,18 @@ public class Interfaz extends JFrame {
     private static JButton boton = new JButton ("Aceptar");
     public static void main(String[] args) throws Exception {
         Interfaz voto = new Interfaz ();
-        voto.setSize(500,500);
+        voto.setSize(800,800);
         voto.setVisible(true);
         voto.setTitle("PASO");
 
-        voto.setLayout(new FlowLayout());
+        //voto.setLayout(new FlowLayout());
+        voto.setLayout(new GridLayout(3,3)); // filas, columnas
+        voto.getContentPane().add(new JLabel());
         voto.getContentPane().add(directionsLabel);
+        voto.getContentPane().add(outputLabel);
+
         voto.getContentPane().add(text);
         voto.getContentPane().add(boton);
-        voto.getContentPane().add(outputLabel);
         // añadimos una accion
         boton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

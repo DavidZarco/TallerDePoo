@@ -9,50 +9,49 @@ public class Mainn {
 
     public static void main(String[] args) throws Exception {
                 BufferedReader br=new BufferedReader(new FileReader("C:\\votos.txt",StandardCharsets.UTF_8));
-                // MesaElectoral prueba1 = new MesaElectoral();
-                Elector elector1 = new Elector();
+                MesaElectoral prueba1 = new MesaElectoral();
                 List<Elector> listaElector = new ArrayList<>();
+                String nombre;
+                String apellido;
+                int dni;
+                String fecNac;
+                String lugVot;
                 
 
                 File archivo = null;
                 FileReader fr = null;
-                System.out.println("Ingrese su nombre:");
+
              
                try {
                     archivo = new File ("C:\\votos.txt");
                     
-                    String regex = "Nombre:(\\w*\\s?\\w*?).*Apellido:(\\w*).*Domicilio:(.*).*DNI:(\\d*).*cimiento:(\\d*/\\d*/\\d*).*Votacion:(.*)";
+                    String regex = "Nombre:(\\w*\\s?\\w*?).*Apellido:(\\w*).*Domicilio:(.*).*lidad/Departamento:(.*).*Provincia:(.*).*DNI:(\\d*).*cimiento:(\\d*/\\d*/\\d*).*Votacion:(.*)";
                      
                     Pattern pattern = Pattern.compile(regex);
                     String linea;
-                    int con=0;
+                    
                     while((linea=br.readLine())!=null){
                         Matcher matcher = pattern.matcher(linea);
-                        if(matcher.matches()){
+                        if(matcher.matches()){    
                             System.out.println("");
-                            // System.out.println("NOMBRES :" + matcher.group(1));
-                            elector1.setNombre(matcher.group(1));
-                            // System.out.println("APELLIDOS :" + matcher.group(2));
-                            elector1.setApellido(matcher.group(2));
-                            // System.out.println("DOMICICLIO:" + matcher.group(3));
-                            elector1.setDomicilio(new Domicilio(matcher.group(3), null, null, null));
-                            // System.out.println("DNI:" + matcher.group(4));
-                            elector1.setDni(Integer.parseInt(matcher.group(4)));
-                            // System.out.println("FECHA NACIMIENTO:" + matcher.group(5));
-                            elector1.setFecNac(matcher.group(5));
-                            // System.out.println("Lugar de Votacion:" + matcher.group(6));
-                            elector1.setLugVotacion(matcher.group(6));
+                            nombre = matcher.group(1);                            
+                            apellido = matcher.group(2);                            
+                            dni = Integer.parseInt(matcher.group(6));                           
+                            fecNac = matcher.group(7);                            
+                            lugVot = (matcher.group(8));
+                            listaElector.add(new Elector(nombre, apellido,dni,fecNac,lugVot, new Domicilio(matcher.group(3), matcher.group(4),matcher.group(5) , matcher.group(4))));
                         }
-                        // creo que en vez de hacer elector1.setnombre es hacer nombre=matcher.group1 y cuando termina el if(matcher) guardar array.nombre(i)=nombre
-                            listaElector.add(elector1);
-                    }
-
-                    for (int index = 0; index < listaElector.size(); index++) {
-                        System.out.println("");
-                        System.out.println(listaElector.get(index));
                         
-                    }       
-                } catch (Exception e) {
+                    }
+                        prueba1.setPadronElectoral(listaElector);
+                        for (int index = 0; index < listaElector.size(); index++) {
+                                System.out.println("");
+                                 System.out.println(listaElector.get(index));
+                         
+                        }
+                        
+                    }  
+                 catch (Exception e) {
                     e.printStackTrace();
                 }finally{
                     // En el finally cerramos el fichero, para asegurarnos
@@ -75,6 +74,8 @@ public class Mainn {
                 listaElectores.add(elector);
                 MesaElectoral mesaElectoral = new MesaElectoral(elector, elector, 12 ,listaElectores ) ;
                 // System.out.println(mesaElectoral.getPadronElectoral());
+
+                System.out.println("Se ejecutó el Metodo main");
         }
 
 }

@@ -29,8 +29,19 @@ public class MesaElectoral {
 
     
     
-    public void verificarDni(List<Elector> padronElectoral, Elector persona1){ 
-        
+    public void verificarDni(Elector elector){ 
+        // try {
+        //     for (int index = 0; index < this.padronElectoral.size(); index++) {
+        //     if (elector.equals(this.padronElectoral.get(index))) {
+        //         System.out.println("Es válido puede votar");
+                
+            
+        //     }
+        // }
+        // } catch (Exception e) {
+        //     System.out.println("Error: sus datos son inválidos");
+        //     // verificarDni(elector); (capaz se puede hacer recursivo para que inserten los datos x cantidad de veces)
+        // }
     }
     
     public void recibirVoto(){

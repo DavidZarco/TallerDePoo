@@ -1,17 +1,19 @@
 public class CamaraElectoral {
     
-    public void getCandidatos(){    
+    public void getCandidatos(ListaElectoral listaElectoral){
+        // listaElectoral.getListaCandidato();    
     }
     
     public void verificarCandidatos(){
        
     }
     
-    public void getNumeroLista(){
-        
+    public void getNumeroLista(ListaElectoral listaElectoral){
+        // listaElectoral.getNumero();
     }
 
     public void listaDiferente(){
+        //
         
     }
 }

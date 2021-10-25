@@ -4,16 +4,17 @@ public class Elector {
     private int dni;
     private String fecNac;
     private String lugVotacion;
-    private static int contadorElectores;
+    private static int contadorElectores = 0;
     private Domicilio domicilio;
     private MesaElectoral mesaVotacion;
 
     public Elector() {
-        this.contadorElectores = contadorElectores+1;
+        contadorElectores++;
     }
     
 
     public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio) {
+        this();
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -21,6 +22,15 @@ public class Elector {
         this.lugVotacion = lugVotacion;
         this.domicilio = domicilio;
 
+    }
+
+    public boolean habilitadoParaVotar(){
+        // boolean habVoto = false;
+        // final int ANIO_ACTUAL = 2021;
+        // if (ANIO_ACTUAL - Integer.parseInt(this.fecNac) >= 16) {
+        //     habVoto = true;   
+        // }
+        // return habVoto;
     }
 
     public MesaElectoral getMesaVotacion() {

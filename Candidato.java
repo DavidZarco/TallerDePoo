@@ -5,8 +5,8 @@ public class Candidato extends Elector{
     public Candidato() {
     }
 
-    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, int contadorElectores, Domicilio domicilio, MesaElectoral mesaVotacion, ListaElectoral listaElectoral) {
-        super(nombre, apellido, dni, fecNac, lugVotacion, contadorElectores, domicilio, mesaVotacion);
+    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, int contadorElectores, Domicilio domicilio, ListaElectoral listaElectoral) {
+        super(nombre, apellido, dni, fecNac, lugVotacion, domicilio);
         this.listaElectoral = listaElectoral;
     }
 

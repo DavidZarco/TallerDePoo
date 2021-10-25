@@ -15,7 +15,7 @@ public class MesaElectoral {
         this.numeroMesa = numeroMesa+1;
         this.presidente = presidente;
         this.suplente = suplente;
-        this.recuentoVotos = recuentoVotos;
+        this.recuentoVotos = 0;
         this.padronElectoral = padronElectoral;
     }
 
@@ -44,12 +44,23 @@ public class MesaElectoral {
         // }
     }
     
-    public void recibirVoto(){
-        
+    public void recibirVoto(Voto voto){
+        // int votosBlanco = 0;
+        // this.recuentoVotos ++;
+        // if (voto == null) {
+        //     votosBlanco;
+        // }else{
+        //     if (voto.getVotoDiputados().equals(voto.getVotoSenadores())) {
+        //         int votoPrueba ++;
+        //     }else{
+        //         int votoPrueba++
+        //         int votoPrueba2++;
+        //     }
+        // }
     }
     
-    public void cerrarVoto(){
-        
+    public void cerrarMesa(){
+        //si pasa la hora maxima o dia. no se podrá votar tendriamos que trabajar con localDateTime.
     }
 
     public int getNumeroMesa() {

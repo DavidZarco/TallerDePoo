@@ -28,6 +28,8 @@ public class Voto {
     }
     
     public void verificarVoto(){
+        System.out.println("Está seguro de su voto?");
+        //recibe respuesta, si es si finaliza si es no vuelve a la sala de votacion.
         
     }
     

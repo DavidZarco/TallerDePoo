@@ -8,29 +8,26 @@ public class Elector {
     private Domicilio domicilio;
     private MesaElectoral mesaVotacion;
 
-    public Elector() {
-        contadorElectores++;
-    }
-    
-
+        
     public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio) {
-        this();
+        
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fecNac = fecNac;
         this.lugVotacion = lugVotacion;
         this.domicilio = domicilio;
+        contadorElectores++;
 
     }
 
     public boolean habilitadoParaVotar(){
-        // boolean habVoto = false;
+        boolean habVoto = false;
         // final int ANIO_ACTUAL = 2021;
         // if (ANIO_ACTUAL - Integer.parseInt(this.fecNac) >= 16) {
         //     habVoto = true;   
         // }
-        // return habVoto;
+        return habVoto;
     }
 
     public MesaElectoral getMesaVotacion() {
@@ -87,10 +84,7 @@ public class Elector {
         return contadorElectores;
     }
 
-    public void setContadorElectores(int contadorElectores) {
-        this.contadorElectores = contadorElectores;
-    }
-
+    
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -101,10 +95,9 @@ public class Elector {
 
     @Override
     public String toString() {
-        return "Elector:" + "Nombre:" + nombre + ", Apellido:" + apellido + ", Dni:" + dni + ", Fecha de Nacimiento:" + fecNac + ", lugar de Votacion:" + lugVotacion + ", Contador de Electores:" + contadorElectores + ", Domicilio:" + domicilio + ", Mesa de Votacion:" + mesaVotacion + '}';
+        return "Elector:" + "Nombre:" + nombre + ", Apellido:" + apellido + ", Dni:" + dni + ", Fecha de Nacimiento:" + fecNac + ", lugar de Votacion:" + lugVotacion + ", Domicilio ," + domicilio + ", Mesa de Votacion:" + mesaVotacion + '}';
     }
 
-    
     
     @Override
     public int hashCode() {

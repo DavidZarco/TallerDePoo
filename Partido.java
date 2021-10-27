@@ -3,8 +3,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class Partido extends GrupoPolitico{
+
     private String sigla;
     private List<Candidato> candidatosPart;
+
+    public Partido(){
+
+    }
 
     public Partido(List<Candidato> candidatosPart) {
         this.candidatosPart = candidatosPart;

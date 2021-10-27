@@ -50,7 +50,7 @@ public class Domicilio {
 
     @Override
     public String toString() {
-        return "Domicilio{" + "direccion=" + direccion + ", localidad=" + localidad + ", provincia=" + provincia + ", departamento=" + departamento + '}';
+        return "direccion:" + direccion + ", Localidad:" + localidad + ", Provincia:" + provincia + ", departamento:" + departamento ;
     }
 
     @Override

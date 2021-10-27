@@ -1,25 +1,36 @@
 public class Candidato extends Elector{
     
     private ListaElectoral listaElectoral;  
+    private Partido partidoPolitico;
 
-    public Candidato() {
+
+
+    public ListaElectoral getListaElectoral() {
+        return listaElectoral;
     }
 
-    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, int contadorElectores, Domicilio domicilio, ListaElectoral listaElectoral) {
-        super(nombre, apellido, dni, fecNac, lugVotacion, domicilio);
+    public void setListaElectoral(ListaElectoral listaElectoral) {
         this.listaElectoral = listaElectoral;
     }
 
-      
+    public Partido getPartidoPolitico() {
+        return partidoPolitico;
+    }
+
+    public void setPartidoPolitico(Partido partidoPolitico) {
+        this.partidoPolitico = partidoPolitico;
+    }
+
+    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio,
+            ListaElectoral listaElectoral, Partido partidoPolitico) {
+        super(nombre, apellido, dni, fecNac, lugVotacion, domicilio);
+        this.listaElectoral = listaElectoral;
+        this.partidoPolitico = partidoPolitico;
+    }
 
     @Override
     public String toString() {
         return "Candidato{" + "listaElectoral=" + listaElectoral + super.toString() + '}';
     }
 
-    
-    
-    
-    
-    
 }

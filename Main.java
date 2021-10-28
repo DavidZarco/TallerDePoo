@@ -6,15 +6,11 @@ import java.util.regex.Matcher;
 
 public class Main{
     
-    
     public static void main(String args[]) throws Exception  {
 
         BufferedReader br = new BufferedReader(new FileReader("C:\\votos.txt", StandardCharsets.UTF_8));
-        //MesaElectoral prueba1 = new MesaElectoral();
-        // Elector elector1 = new Elector();
+        MesaElectoral mesaElectoral = new MesaElectoral();
         List<Elector> listaElector = new ArrayList<>();
-        // List <Candidato> listaCandidato = new ArrayList<>();
-        
         File archivo = null;
         FileReader fr = null;
         //atada candidatos a diputados y senadores por distrito
@@ -25,11 +21,9 @@ public class Main{
             //1 nombre 2 apellido 3 domicilio 4 localidad 5 provincia 6 dni 7 nacimiento 8 lugvotacion 9 candi 10 ntramite
             Pattern pattern = Pattern.compile(regex);
             String linea;
-            int con = 0;
-            // String candidato = "SI";
             while((linea=br.readLine())!=null){
                 Matcher matcher = pattern.matcher(linea);
-            
+                
                 if(matcher.matches()){    
                     String nombre = matcher.group(1);                            
                     String apellido = matcher.group(2);                            
@@ -38,59 +32,62 @@ public class Main{
                     String lugVot = (matcher.group(8));
                     String numTramite = matcher.group(10);                                                
                     listaElector.add(new Elector(nombre, apellido,dni,fecNac,lugVot, new Domicilio(matcher.group(3), matcher.group(4),matcher.group(5) , matcher.group(4)), numTramite));
-                    // String candidato = (matcher.group(9));
-                    
-                    // if (candidato.equals(matcher.group(9))) {
-                    // listaCandidato.add(new Candidato(nombre, apellido,dni,fecNac,lugVot, new Domicilio(matcher.group(3), matcher.group(4),matcher.group(5) , matcher.group(4)), new ListaElectoral(), new Partido()));
+                    // System.out.println(matcher.group(1));
+                    // System.out.println(matcher.group(2));
+                    // System.out.println(matcher.group(3));
+                    // System.out.println(matcher.group(4));
+                    // System.out.println(matcher.group(5));
+                    // System.out.println(matcher.group(6));
+                    // System.out.println(matcher.group(7));
+                    // System.out.println(matcher.group(8));
+                    // System.out.println(matcher.group(9));
+                    // System.out.println(matcher.group(10));
+
+                }        
+            }
+            mesaElectoral.setPadronElectoral(listaElector);
+            System.out.println("Lista de pruebas:");
+            System.out.println("DNI:36216417 NTramite:40909192757681");
+            System.out.println("DNI:93592717 NTramite:63076627254486");
+            System.out.println("DNI:54877765 NTramite:677980723686662");
+            System.out.println("DNI:27665660 NTramite:423426296749582");
+            System.out.println("DNI:20831151 NTramite:991539327457172");
+            Scanner sc = new Scanner(System.in);
+            Scanner sc2 = new Scanner(System.in);
+            System.out.println("Ingrese su DNI");
+            int DNI = sc.nextInt();
+            System.out.println("Ingrese el numero de tramite de su DNI");
+            String nTramite = sc2.next();  
+           
+            // String nTramite = "53926872601732" ; //53926872601732
+            // System.out.println(numes datosn               
+            // datos pruebas Nombre:Juan Apellido:Perez Domicilio:Buenos Aires 1382 Localidad/Departamento:Concordia Provincia:Entre Rios DNI:61724563 FNacimiento:23/01/1955 LugarVotacion:Escuela N°1 Candidato:SI NTramite:53926872601732
+            //int DNI = 13592717;
+            //String nTramite = "63076627254486";
+            System.out.println("El numero de tramite ingresado es: "+nTramite);
+            // for (int index = 0; index < listaElector.size(); index++) {
+            //                  System.out.println("");
+            //                  System.out.println(listaElector.get(index));
                         
+            //             } 
+            //26214998
+            //DNI:41354997 
+            //17910033
+            //PROBLEMAS 15873618
+            //
+            //
+            if (mesaElectoral.verificarDni(DNI,nTramite)) {
+                       //aca va el resto del programa
+                    System.out.println("Acceso concedido");
+                        // for (int index = 0; index < listaElector.size(); index++) {
+                        //      System.out.println("");
+                        //      System.out.println(listaElector.get(index));
                         
-                    // }
-                } else{
-                    // con++;
-                    // System.out.println(con);
-                    // System.out.println("esto es una mierda");
-                }  
+                        // }
+                }else{
+                    System.out.println("Acceso denegado");
                 }
-    
-                //prueba1.setPadronElectoral(listaElector);
-                // Elector elector1 = new Elector("Juan", "Perez", 61744563, "23/01/1955", "Escuela N°1", new Domicilio("Buenos Aires 1382", "Concordia", "Entre Rios", "Concordia"));
-                System.out.println("Ingrese su DNI");
-                // Scanner sc = new Scanner(System.in);
-                // int nomb = sc.nextInt();
-                int dni = 61724563;
-                System.out.println(dni); 
-                // 61724563
                 
-
-                //prueba1.verificarDni(dni);
-
-                //if (prueba1.verificarDni(dni)) {
-                    // nombre
-                    // apellido
-                    // direccion
-                    // localidad
-                    // provincia
-                    // departamento
-                    // lugVotacion 
-                   // prueba1.verificarElector(elector1);
-                    
-                //}
-
-                
-                    
-                    // for (int index = 0; index < listaCandidato.size(); index++) {
-                    //         System.out.println("");
-                    //          System.out.println(listaCandidato.get(index));
-                    
-                    //  }
-                    
-                    
-                     for (int index = 0; index < listaElector.size(); index++) {
-                             System.out.println("");
-                             System.out.println(listaElector.get(index));
-                        
-                         }
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -105,14 +102,11 @@ public class Main{
                         } catch (Exception e2) {
                             e2.printStackTrace();
                         }
-                    }
-
-
-
-                
-
-
-
+                    }                
+                    // Prueba para generar las listas locales.
+                    Elector juanPerez = new Elector("Juan","Perez",61724563,"23/01/1955","Escuela N°1",new Domicilio("Buenos Aires 1382","Concordia","Chubut ","Chubut "),"53926872601732");
+                    System.out.println("Datos de juan perez: "+juanPerez.toString());
+                     mesaElectoral.generarListasLocales(juanPerez,3);
                 }       // ACA TERMINA EL VOID MAIN
                      
 
@@ -134,4 +128,4 @@ public class Main{
             
             
                                           
-    }//fin del main
+    }//fin de la clase

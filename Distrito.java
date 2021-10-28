@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Objects;
 
-public class Distrito { //tendria que implentar la interfaz "Estadistica"
+public class Distrito{//implements Estadistica  { //tendria que implentar la interfaz "Estadistica"
     private String nombre;
     private int cantidadDiputados;
     private int cantidadSenadores;

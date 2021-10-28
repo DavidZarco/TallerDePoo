@@ -14,7 +14,7 @@ public class InterfazPag2 extends javax.swing.JFrame {
     
     
     
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
@@ -84,11 +84,11 @@ public class InterfazPag2 extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // todo add your handling code here:
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // todo add your handling code here:
     }                                        
 
     /**

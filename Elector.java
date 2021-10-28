@@ -7,9 +7,10 @@ public class Elector {
     private static int contadorElectores = 0;
     private Domicilio domicilio;
     private MesaElectoral mesaVotacion;
+    private String numTramite;
 
         
-    public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio) {
+    public Elector(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio, String numTramite) {
         
         this.nombre = nombre;
         this.apellido = apellido;
@@ -18,8 +19,18 @@ public class Elector {
         this.lugVotacion = lugVotacion;
         this.domicilio = domicilio;
         contadorElectores++;
+        this.numTramite = numTramite;
 
     }
+
+    public String getNumTramite() {
+        return numTramite;
+    }
+
+    public void setNumTramite(String numTramite) {
+        this.numTramite = numTramite;
+    }
+
 
     public boolean habilitadoParaVotar(){
         boolean habVoto = false;
@@ -95,7 +106,7 @@ public class Elector {
 
     @Override
     public String toString() {
-        return "Elector:" + "Nombre:" + nombre + ", Apellido:" + apellido + ", Dni:" + dni + ", Fecha de Nacimiento:" + fecNac + ", lugar de Votacion:" + lugVotacion + ", Domicilio ," + domicilio + ", Mesa de Votacion:" + mesaVotacion + '}';
+        return "Elector:" + "Nombre:" + nombre + ", Apellido:" + apellido + ", Dni:" + dni + ", Fecha de Nacimiento:" + fecNac + ", lugar de Votacion:" + lugVotacion + ", Domicilio ," + domicilio + ", Mesa de Votacion:" + mesaVotacion + ", Numero de tramite: " + numTramite;
     }
 
     

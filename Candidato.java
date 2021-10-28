@@ -21,9 +21,9 @@ public class Candidato extends Elector{
         this.partidoPolitico = partidoPolitico;
     }
 
-    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio,
+    public Candidato(String nombre, String apellido, int dni, String fecNac, String lugVotacion, Domicilio domicilio, String numTramite,
             ListaElectoral listaElectoral, Partido partidoPolitico) {
-        super(nombre, apellido, dni, fecNac, lugVotacion, domicilio);
+        super(nombre, apellido, dni, fecNac, lugVotacion, domicilio, numTramite);
         this.listaElectoral = listaElectoral;
         this.partidoPolitico = partidoPolitico;
     }

@@ -30,18 +30,19 @@ public class MesaElectoral {
     
     
     public void verificarDni(Elector elector){ 
-        // try {
-        //     for (int index = 0; index < this.padronElectoral.size(); index++) {
-        //     if (elector.equals(this.padronElectoral.get(index))) {
-        //         System.out.println("Es válido puede votar");
-                
-            
-        //     }
-        // }
-        // } catch (Exception e) {
-        //     System.out.println("Error: sus datos son inválidos");
-        //     // verificarDni(elector); (capaz se puede hacer recursivo para que inserten los datos x cantidad de veces)
-        // }
+        try {
+            for (int index = 0; index < this.padronElectoral.size(); index++) {
+                if (elector.getDni() == (this.padronElectoral.get(index).getDni())) {
+                    if(elector.equals(this.padronElectoral.get(index))){
+                        System.out.println("Esta habilitado para votar");
+                    }
+                }
+            }
+            System.out.println("Datos erroneos");
+            break;
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
     }
     
     public void recibirVoto(Voto voto){
@@ -98,7 +99,7 @@ public class MesaElectoral {
     public String toString() {
         return "MesaElectoral{" + "numeroMesa=" + numeroMesa + ", presidente=" + presidente + ", suplente=" + suplente + ", recuentoVotos=" + recuentoVotos + ", padronElectoral=" + padronElectoral + '}';
     }
-
+    
     
     @Override
     public int hashCode() {

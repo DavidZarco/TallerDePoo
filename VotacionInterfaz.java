@@ -4,15 +4,24 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.List;
 import java.util.ArrayList;
+
+
 public class VotacionInterfaz extends javax.swing.JFrame {
-    private int dniIngresado;  
+
+    private String dni;
+    List<Candidato> listaCandidatos;
+    
+    
     /**
      * Creates new form VotacionInterfaz
      */
     public VotacionInterfaz() {
         initComponents();
+        
+        
         jLabel4.setVisible(false);
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -21,16 +30,16 @@ public class VotacionInterfaz extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
+
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PASO");
-        setMinimumSize(new java.awt.Dimension(600,400));
+        setMinimumSize(new java.awt.Dimension(600, 400));
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setToolTipText("");
@@ -61,10 +70,6 @@ public class VotacionInterfaz extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 255, 255));
         jLabel2.setText("Bienvenido al Sistema electoral argentino");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Se ha abierto una ventana donde puede modificar su voto.");
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
         jLabel4.setText("El documento ingresado debe contener entre 8 y 9 digitos.");
@@ -94,11 +99,8 @@ public class VotacionInterfaz extends javax.swing.JFrame {
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                        .addComponent(jLabel4)))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,16 +115,12 @@ public class VotacionInterfaz extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
-//jtabedpain autenticacion : enviar salta a otra pestaña
-//jtabedpain  setenable att:indice true or false para anular 
-// si apreta enviar anular
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
         boolean verificador = true;
@@ -132,18 +130,22 @@ public class VotacionInterfaz extends javax.swing.JFrame {
         
         if(jTextField1.getText().length()<8 || jTextField1.getText().length()>9){
             jLabel4.setVisible(true);
-        }
-        dniIngresado = Integer.parseInt(jTextField1.getText());
+        }else{
+        dni =jTextField1.getText();
         
-        int length = String.valueOf(dniIngresado).length();
+        int length = (dni).length();
         if((verificador == true) && (length >7) && (length < 10)){
-            InterfazPag2 pagina2 = new InterfazPag2();
-            pagina2.setVisible(true);
-            
+//            InterfazPag2 pagina2 = new InterfazPag2();
+//            pagina2.setVisible(true);
+        InterfazPag2 pag2 = new InterfazPag2();
+        pag2.my_update(dni);
+        pag2.setVisible(true);
+        dispose();  // Cierro esta ventana
         }
         
         
         page1Off();
+        }
     }                                        
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {                                     
@@ -224,7 +226,6 @@ public class VotacionInterfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration                   

@@ -51,7 +51,7 @@ public class MesaElectoral {
                      System.out.println(this.padronElectoral.get(index).getDni());
                      System.out.println(this.padronElectoral.get(index).getNumTramite());
 
-                        if (nTram.equals(padronElectoral.get(index).getNumTramite())) {
+                        if (nTram.equalsIgnoreCase(padronElectoral.get(index).getNumTramite())) {
                         System.out.println(padronElectoral.get(index).getNombre()+this.padronElectoral.get(index).getApellido());
                         verificador = true;
                         System.out.println("ENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");

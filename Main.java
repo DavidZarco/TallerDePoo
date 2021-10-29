@@ -3,7 +3,6 @@ import java.util.regex.Pattern;
 import java.nio.charset.StandardCharsets;
 import java.io.*;
 import java.util.regex.Matcher;
-
 public class Main{
     
     public static void main(String args[]) throws Exception  {
@@ -85,7 +84,6 @@ public class Main{
                     System.out.println("");
                     System.out.println("Esteban José Bullrich,Juliana Di Tullio,Gladys González");
                     System.out.println("");
-
                     Scanner sc3 = new Scanner(System.in);
                     int bot = sc.nextInt();
                     int votoBlanco = 0;             // 0 ES VOTO EN BLANCO
@@ -94,9 +92,6 @@ public class Main{
                     int votoLista3 = 0;
                     int votoLista4 = 0;
                     int votoLista5 = 0;
-
-                    
-
                     switch(bot){
                         case 0:
                         votoBlanco++;
